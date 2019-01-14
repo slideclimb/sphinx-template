@@ -47,48 +47,6 @@
 </li>
 </ul>
 </div>
-<div class="section" id="add-sphinx-to-an-existing-python-project">
-<h2>Add Sphinx to an existing Python project<a class="headerlink" href="#add-sphinx-to-an-existing-python-project" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p class="first">Install <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/installation.html">sphinx</a>.</p>
-</li>
-<li><dl class="first docutils">
-<dt>Run <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> to generate a <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> and <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>, make sure you:</dt>
-<dd><ul class="first last simple">
-<li>say yes to <code class="docutils literal notranslate"><span class="pre">separate</span> <span class="pre">source</span> <span class="pre">and</span> <span class="pre">build</span> <span class="pre">directories</span></code></li>
-<li>say yes to <code class="docutils literal notranslate"><span class="pre">automatically</span> <span class="pre">insert</span> <span class="pre">docstrings</span> <span class="pre">from</span> <span class="pre">modules</span></code></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p class="first">Now you can generate html by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>.</p>
-</li>
-<li><p class="first">To create a run configuration for this in PyCharm, add a new run configuration from <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Docs</span> <span class="pre">&gt;</span> <span class="pre">Sphinx</span> <span class="pre">Task</span></code>, set the directory that contains <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> as input, and the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> as output.</p>
-</li>
-<li><p class="first">Uncomment the following lines in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> (probably lines 15-17):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>and change the last line to:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-M</span> <span class="pre">-T</span> <span class="pre">-E</span> <span class="pre">-f</span> <span class="pre">-o</span> <span class="pre">docs/source</span> <span class="pre">.</span></code> to generate a <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file for each package. You can find what each option does in the <a class="reference external" href="apidocdocumentation">apidocdocumentation</a>. Do this every time you change something in your code/docstrings.</p>
-</li>
-<li><p class="first">Add each package to the table of contents, the toctree in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>. In this example that would be the <code class="docutils literal notranslate"><span class="pre">noodles</span></code> and the <code class="docutils literal notranslate"><span class="pre">spaghetti</span></code> packages:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
-   <span class="p">:</span><span class="n">masdepth</span><span class="p">:</span> <span class="mi">2</span>
-
-   <span class="n">noodles</span>
-   <span class="n">spaghetti</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</div>
 </div>
 
 
