@@ -1,0 +1,2 @@
+# Sphinx template
+This is an example project for setting up sphinx with python. For the resulting documentation and a guide on how to do so, open the [docs/build/html/index.html](docs/build/html/index.html) with your favourite web browser.
