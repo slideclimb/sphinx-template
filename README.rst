@@ -1,5 +1,6 @@
 Setup sphinx, or add it to an existing Python project
 -----------------------------------------------------
+
 - Install `sphinx <http://www.sphinx-doc.org/en/master/usage/installation.html>`_.
 - Run ``sphinx-quickstart`` to generate a ``conf.py`` and ``index.rst``, make sure you:
    - say yes to ``separate source and build directories``
@@ -25,11 +26,10 @@ Setup sphinx, or add it to an existing Python project
 - Run ``sphinx-apidoc -M -T -E -f -o docs/source .`` to generate a ``.rst`` file for each package. You can find what each option does in the `<apidoc documentation>`_. Do this every time you change something in your code/docstrings.
 - Add each package to the table of contents, the toctree in ``index.rst``. In this example that would be the ``noodles`` and the ``spaghetti`` packages:
 
- .. code-block::
- 
-    .. toctree::
-       :maxdepth: 2
+  .. code-block::
 
-       noodles
-       spaghetti
-
+     .. toctree::
+        :maxdepth: 2
+        
+        noodles
+        spaghetti
