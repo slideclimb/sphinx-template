@@ -14,7 +14,7 @@ Setup sphinx, or add it to an existing Python project
      import os
      import sys
      sys.path.insert(0, os.path.abspath('.'))
-     
+
 
   and change the last line to:
 
@@ -30,6 +30,6 @@ Setup sphinx, or add it to an existing Python project
 
      .. toctree::
         :maxdepth: 2
-        
+
         noodles
         spaghetti
